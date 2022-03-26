@@ -1,11 +1,12 @@
 import TodoItem from './TodoItem';
 
 const TodoList = ({todos}) => {
-
+    // const todolist = todos.map(todo => todo)
     return (
         <>
-            <div>여긴TodoList</div>
-            <div></div>
+            <h1>여긴TodoList</h1>
+            <div>{todos.map((todo, index) => <TodoItem key={index} todo={todo} />)}</div> 
+            {/* <div><TodoItem /></div> */}
         </>
 
     );
