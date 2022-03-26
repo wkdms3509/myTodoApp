@@ -5,6 +5,7 @@ import TodoList from './components/TodoList';
 import TodoInsert from './components/TodoInsert';
 import {AiFillEdit} from 'react-icons/ai';
 
+let id = 4;
 function App() {
   const [toggle, setToggle] = useState(false);
   const [todos, setTodos] = useState([
@@ -30,11 +31,26 @@ function App() {
     console.log(toggle);
   }
 
+  const insertTodo = (value) => {
+    const todo = {
+      id: id++,
+      text: value,
+      checked: false
+    }
+
+    setTodos(todos.concat(todo));
+  }
+
+  const onDelete = (id) => {
+    const todo = todos.filter(todo => todo.id !== id);
+    setTodos(todo)
+  }
+
   return (
     <Home>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={onDelete} />
       <div><AiFillEdit onClick={() => onInsertToggle()} /></div>
-      {toggle && <TodoInsert />}
+      {toggle && <TodoInsert onInsertToggle={onInsertToggle} insertTodo={insertTodo} />}
     </Home>
   );
 }

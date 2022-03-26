@@ -1,10 +1,10 @@
 import TodoItem from './TodoItem';
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, onDelete}) => {
     return (
         <>
             <h1>여긴TodoList</h1>
-            <div>{todos.map((todo, index) => <TodoItem key={index} todo={todo} />)}</div> 
+            <div>{todos.map((todo, index) => <TodoItem key={index} todo={todo} onDelete={onDelete} />)}</div> 
         </>
 
     );

@@ -1,8 +1,8 @@
 import { AiOutlineCheckSquare, AiOutlineBorder } from 'react-icons/ai';
 import './TodoItem.css';
 
-const TodoItem = ({todo}) => {
-    const {text, checked} = todo;
+const TodoItem = ({todo, onDelete}) => {
+    const {id, text, checked} = todo;
 
     return (
         <div className="TodoItem">
@@ -11,7 +11,7 @@ const TodoItem = ({todo}) => {
             </div>
             <div className="text">{text}</div>
             <button>수정</button>
-            <button>삭제</button>
+            <button onClick={() => onDelete(id)}>삭제</button>
         </div>
     );
 }
