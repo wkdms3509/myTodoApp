@@ -21,14 +21,7 @@ const TodoInsert = ({onInsertToggle, insertTodo, selectedTodo, onEdit}) => {
             setText(selectedTodo.text);
             console.log(selectedTodo.text);
         }
-    }, [])
-
-    useEffect(() => {
-        if(selectedTodo) {
-            setText(selectedTodo.text);
-            console.log(selectedTodo.text);
-        }
-    }, [selectedTodo]);
+    }, [selectedTodo])
 
     return (
         <form onSubmit={onSubmit} className="insertForm">

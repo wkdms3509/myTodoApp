@@ -1,5 +1,5 @@
 import { AiOutlineCheckSquare, AiOutlineBorder } from 'react-icons/ai';
-import { BsBookmarkCheckFill, BsTrash } from 'react-icons/bs';
+import { BsTrash } from 'react-icons/bs';
 import { FiEdit } from 'react-icons/fi';
 import './TodoItem.css';
 
@@ -24,7 +24,6 @@ const TodoItem = ({todo, onDelete, onClickCheckedBtn, onEdit, onInsertToggle, on
                 }>
                 <BsTrash size="25px" />
             </button>
-            {/* <button><BsBookmarkCheckFill size="25px" /></button> */}
         </div>
     );
 }
