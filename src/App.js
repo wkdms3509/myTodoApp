@@ -46,9 +46,13 @@ function App() {
     setTodos(todo)
   }
 
+  const onClickCheckedBtn = (id) => {
+    setTodos(todos.map(todo => todo.id === id ? {...todo, checked: !todo.checked} : todo))
+  }
+
   return (
     <Home>
-      <TodoList todos={todos} onDelete={onDelete} />
+      <TodoList todos={todos} onDelete={onDelete} onClickCheckedBtn={onClickCheckedBtn} />
       <div><AiFillEdit onClick={() => onInsertToggle()} /></div>
       {toggle && <TodoInsert onInsertToggle={onInsertToggle} insertTodo={insertTodo} />}
     </Home>

@@ -4,8 +4,14 @@
 
 .TodoItem .contents {
     margin-right: 10px;
+    display: flex;
 }
 
 .TodoItem .text {
-    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.TodoItem .contents.checked {
+    color: #cdcdcd;
+    text-decoration: line-through;
 }

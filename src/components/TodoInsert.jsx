@@ -10,7 +10,7 @@ const TodoInsert = ({onInsertToggle, insertTodo}) => {
         onInsertToggle();
     }
 
-    const onChange = (e) => {
+    const onChange = (e) => {  
         setText(e.target.value);
     }
 
