@@ -49,8 +49,7 @@ function App() {
   const onClickCheckedBtn = (id) => {
     setTodos(todos.map(todo => todo.id === id ? {...todo, checked: !todo.checked} : todo))
   }
-
-  console.log('test');
+console.log('test');
 
   return (
     <Home>
