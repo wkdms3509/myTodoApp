@@ -1,11 +1,12 @@
 import TodoItem from './TodoItem';
+import './TodoList.css';
 
 const TodoList = ({todos, onDelete, onClickCheckedBtn}) => {
     return (
-        <>
-            <h1>TodoList</h1>
-            <div>{todos.map((todo, index) => <TodoItem key={index} todo={todo} onDelete={onDelete} onClickCheckedBtn={onClickCheckedBtn} />)}</div> 
-        </>
+        <div className="TodoList">
+            <h2>TodoList({todos.length})</h2>
+            <div className="TodoList__item">{todos.map((todo, index) => <TodoItem key={index} todo={todo} onDelete={onDelete} onClickCheckedBtn={onClickCheckedBtn} />)}</div> 
+        </div>
 
     );
 }

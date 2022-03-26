@@ -1,0 +1,13 @@
+.TodoList {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .TodoList .TodoList__item {
+    width: 15vw;
+    margin-bottom: 5px;
+    text-align: center;
+} */

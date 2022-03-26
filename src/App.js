@@ -28,7 +28,6 @@ function App() {
 
   const onInsertToggle = () => {
     setToggle(!toggle);
-    console.log(toggle);
   }
 
   const insertTodo = (value) => {
@@ -49,14 +48,31 @@ function App() {
   const onClickCheckedBtn = (id) => {
     setTodos(todos.map(todo => todo.id === id ? {...todo, checked: !todo.checked} : todo))
   }
-console.log('test');
+
+  const Today = () => {
+    const week = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+    let now = new Date();
+    let todayYear = now.getFullYear();
+    let todayMonth = now.getMonth() + 1;
+    let todayDate = now.getDate();
+    let dayOfWeek = week[now.getDay()];
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    // const time = `${todayYear}년 ${todayMonth}월 ${todayDate}일 ${dayOfWeek} ${hours}:${minutes}`;
+
+    return (
+      `${todayYear}년 ${todayMonth}월 ${todayDate}일 ${dayOfWeek} ${hours}:${minutes}`
+    )
+  }
 
   return (
-    <Home>
-      <TodoList todos={todos} onDelete={onDelete} onClickCheckedBtn={onClickCheckedBtn} />
-      <div><AiFillEdit onClick={() => onInsertToggle()} /></div>
-      {toggle && <TodoInsert onInsertToggle={onInsertToggle} insertTodo={insertTodo} />}
-    </Home>
+    <>
+      <Home className="Home" Today={Today}>
+        {toggle && <TodoInsert onInsertToggle={onInsertToggle} insertTodo={insertTodo} />}
+        <TodoList todos={todos} onDelete={onDelete} onClickCheckedBtn={onClickCheckedBtn} />
+        <div className="addItemBtn"><AiFillEdit size="25px" onClick={() => onInsertToggle()} /></div>
+      </Home>
+    </>
   );
 }
 

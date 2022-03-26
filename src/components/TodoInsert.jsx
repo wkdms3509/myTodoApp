@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import './TodoInsert.css';
+import {BsPlusLg} from 'react-icons/bs';
 
 const TodoInsert = ({onInsertToggle, insertTodo}) => {
     const [text, setText] = useState('');
@@ -14,10 +16,14 @@ const TodoInsert = ({onInsertToggle, insertTodo}) => {
         setText(e.target.value);
     }
 
+    useEffect(() => {
+        
+    })
+
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="insertForm">
             <input value={text} onChange={onChange} />
-            <button type='submit'>추가</button>
+            <button className="button" type='submit'><BsPlusLg size="20px" /></button>
         </form>
     );
 }

@@ -1,0 +1,14 @@
+.Container {
+    width: 40vw;
+    height: 80vh;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.today {
+    width: 16vw;
+    font-weight: bold;
+    padding-top: 5px;
+  }

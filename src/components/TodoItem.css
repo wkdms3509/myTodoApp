@@ -1,5 +1,6 @@
 .TodoItem {
     display: flex;
+    margin-bottom: 8px;
 }
 
 .TodoItem .contents {
@@ -9,9 +10,20 @@
 
 .TodoItem .text {
     margin-left: 10px;
+    font-size: 25px;
 }
 
 .TodoItem .contents.checked {
     color: #cdcdcd;
     text-decoration: line-through;
+}
+
+.TodoItem .edit {
+    margin-right: 5px;
+}
+
+button {
+    background-color: white;
+    outline: none;
+    border: none;
 }

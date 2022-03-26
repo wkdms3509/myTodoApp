@@ -1,4 +1,6 @@
 import { AiOutlineCheckSquare, AiOutlineBorder } from 'react-icons/ai';
+import { BsBookmarkCheckFill, BsTrash } from 'react-icons/bs';
+import { FiEdit } from 'react-icons/fi';
 import './TodoItem.css';
 
 const TodoItem = ({todo, onDelete, onClickCheckedBtn}) => {
@@ -7,11 +9,12 @@ const TodoItem = ({todo, onDelete, onClickCheckedBtn}) => {
     return (
         <div className="TodoItem">
             <div className={`contents ${checked ? 'checked' : ''}`}>
-                {checked ? <AiOutlineCheckSquare onClick={() => onClickCheckedBtn(id)} /> : <AiOutlineBorder onClick={() => onClickCheckedBtn(id)} />}
+                {checked ? <AiOutlineCheckSquare size="25px" onClick={() => onClickCheckedBtn(id)} /> : <AiOutlineBorder size="25px" onClick={() => onClickCheckedBtn(id)} />}
                 <div className="text">{text}</div>
             </div>
-            <button>수정</button>
-            <button onClick={() => onDelete(id)}>삭제</button>
+            <button className="edit"><FiEdit size="25px" /></button>
+            <button onClick={() => onDelete(id)}><BsTrash size="25px" /></button>
+            {/* <button><BsBookmarkCheckFill size="25px" /></button> */}
         </div>
     );
 }
