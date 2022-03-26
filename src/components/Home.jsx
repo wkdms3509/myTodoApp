@@ -1,6 +1,9 @@
-const Home = () => {
+const Home = ({children}) => {
     return (
-        <div>Todo App</div>
+        <div>
+             <div>Todo App</div>
+             <div>{children}</div>
+        </div>
     )
 }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Home from './components/Home';
+import TodoList from './components/TodoList';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -22,7 +23,7 @@ function App() {
   ]);
   return (
     <Home>
-      {/* <TodoList /> */}
+      <TodoList />
     </Home>
   );
 }
