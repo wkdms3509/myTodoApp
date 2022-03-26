@@ -23,7 +23,7 @@ function App() {
   ]);
   return (
     <Home>
-      <TodoList />
+      <TodoList todos={todos} />
     </Home>
   );
 }
