@@ -50,6 +50,8 @@ function App() {
     setTodos(todos.map(todo => todo.id === id ? {...todo, checked: !todo.checked} : todo))
   }
 
+  console.log('test');
+
   return (
     <Home>
       <TodoList todos={todos} onDelete={onDelete} onClickCheckedBtn={onClickCheckedBtn} />
