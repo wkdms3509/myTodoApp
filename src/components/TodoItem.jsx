@@ -9,7 +9,7 @@ const TodoItem = ({todo}) => {
             <div className={`contents ${checked}`}>
                 {checked ? <AiOutlineCheckSquare /> : <AiOutlineBorder/>}
             </div>
-            <div className="text">{todo.text}</div>
+            <div className="text">{text}</div>
             <button>수정</button>
             <button>삭제</button>
         </div>
