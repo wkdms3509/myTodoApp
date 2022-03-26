@@ -1,0 +1,11 @@
+.TodoItem {
+    display: flex;
+}
+
+.TodoItem .contents {
+    margin-right: 10px;
+}
+
+.TodoItem .text {
+    margin-right: 10px;
+}

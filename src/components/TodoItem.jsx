@@ -1,14 +1,15 @@
-import { AiOutlineCheckSquare, AiOutlineBorder } from 'react-icons/ai'
+import { AiOutlineCheckSquare, AiOutlineBorder } from 'react-icons/ai';
+import './TodoItem.css';
 
 const TodoItem = ({todo}) => {
     const {text, checked} = todo;
 
     return (
-        <div>
-            <div className={`content ${checked}`}>
+        <div className="TodoItem">
+            <div className={`contents ${checked}`}>
                 {checked ? <AiOutlineCheckSquare /> : <AiOutlineBorder/>}
             </div>
-            <div>{todo.text}</div>
+            <div className="text">{todo.text}</div>
             <button>수정</button>
             <button>삭제</button>
         </div>
