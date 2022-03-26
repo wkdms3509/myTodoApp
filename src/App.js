@@ -7,6 +7,7 @@ import {AiFillEdit} from 'react-icons/ai';
 
 let id = 4;
 function App() {
+  const [selectedTodo, setSelectedTodo] = useState(null);
   const [toggle, setToggle] = useState(false);
   const [todos, setTodos] = useState([
     {
@@ -65,11 +66,37 @@ function App() {
     )
   }
 
+  const onChangeSelectedTodo = (todo) => {
+    setSelectedTodo(todo);
+  }
+
+  const onEdit = (id, value) => {
+    setTodos(todos => todos.map(todo => todo.id === id ? {...todo, text: value} : todo))
+  }
+
   return (
     <>
       <Home className="Home" Today={Today}>
-        {toggle && <TodoInsert onInsertToggle={onInsertToggle} insertTodo={insertTodo} />}
-        <TodoList todos={todos} onDelete={onDelete} onClickCheckedBtn={onClickCheckedBtn} />
+        {/* toggle이 true일 때 TodoInsert 창 켜짐 */}
+        {toggle && <TodoInsert 
+            onInsertToggle={onInsertToggle} 
+            insertTodo={insertTodo} 
+            onEdit={onEdit} 
+            selectedTodo={selectedTodo} 
+          />
+        }
+
+        {/* todo list 목록 보여줌 */}
+        <TodoList 
+          todos={todos} 
+          onDelete={onDelete} 
+          onClickCheckedBtn={onClickCheckedBtn} 
+          onEdit={onEdit} 
+          onInsertToggle={onInsertToggle}
+          onChangeSelectedTodo={onChangeSelectedTodo} 
+        />
+
+        {/* todo 추가 버튼. 클릭 시 토글 창 켜짐 */}
         <div className="addItemBtn"><AiFillEdit size="25px" onClick={() => onInsertToggle()} /></div>
       </Home>
     </>
