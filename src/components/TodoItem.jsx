@@ -15,7 +15,6 @@ const TodoItem = ({todo, onDelete, onClickCheckedBtn, onEdit, onInsertToggle, on
             <button className="edit" onClick={() => {
                 onInsertToggle();
                 onChangeSelectedTodo(todo);
-                onEdit(id, text);
                 }}>
                 <FiEdit size="25px" />
             </button>

@@ -6,10 +6,10 @@ const TodoList = ({todos, onDelete, onClickCheckedBtn, onEdit, onInsertToggle, o
         <div className="TodoList">
             <h2>TodoList({todos.length})</h2>
             <div className="TodoList__item">
-                {todos.map((todo, index) => 
+                {todos.map((todo) => 
                     <TodoItem 
-                        key={index} 
-                        todo={todo} 
+                        key={todo.id}
+                        todo={todo}
                         onDelete={onDelete} 
                         onClickCheckedBtn={onClickCheckedBtn} 
                         onEdit={onEdit} 

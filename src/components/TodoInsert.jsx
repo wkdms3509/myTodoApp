@@ -8,6 +8,9 @@ const TodoInsert = ({onInsertToggle, insertTodo, selectedTodo, onEdit}) => {
     const onSubmit = (e) => {
         e.preventDefault();
         insertTodo(text);
+        if(selectedTodo) {
+            onEdit(selectedTodo.id, text);
+        }
         setText('');
         onInsertToggle();
     }
@@ -19,7 +22,6 @@ const TodoInsert = ({onInsertToggle, insertTodo, selectedTodo, onEdit}) => {
     useEffect(() => {
         if(selectedTodo) {
             setText(selectedTodo.text);
-            console.log(selectedTodo.text);
         }
     }, [selectedTodo])
 
@@ -27,7 +29,7 @@ const TodoInsert = ({onInsertToggle, insertTodo, selectedTodo, onEdit}) => {
         <form onSubmit={onSubmit} className="insertForm">
             <input value={text} onChange={onChange} />
             {selectedTodo ? (
-                    <button type='submit' onClick={() => {onEdit(selectedTodo.id, text)}} >수정</button>
+                    <button type='submit' >수정</button>
                 ) : (
                     <button type='submit' ><BsPlusLg /></button>
                 )

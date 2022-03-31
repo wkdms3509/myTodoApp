@@ -68,10 +68,16 @@ function App() {
 
   const onChangeSelectedTodo = (todo) => {
     setSelectedTodo(todo);
+    console.log(`selectedTodo: ${selectedTodo}`);
   }
 
   const onEdit = (id, value) => {
-    setTodos(todos => todos.map(todo => todo.id === id ? {...todo, text: value} : todo))
+    // console.log(id, value);
+    // setTodos(todos => todos.map(todo => todo.id === id ? {...todo, text: value} : todo))
+    // const result = todos.find(todo => todo.id === id);
+    // result.text = value;
+    const result = todos.map(todo => todo.id === id ? {...todo, text: value} : todo)
+    setTodos(result);
   }
 
   return (
@@ -81,7 +87,7 @@ function App() {
         {toggle && <TodoInsert 
             onInsertToggle={onInsertToggle} 
             insertTodo={insertTodo} 
-            onEdit={onEdit} 
+            onEdit={(id, value) => onEdit(id, value)} 
             selectedTodo={selectedTodo} 
           />
         }
